@@ -1,103 +1,84 @@
-# Jekyll Serif Theme
+<!-- markdownlint-disable-next-line -->
+<div align="center">
 
-Serif is a modern business theme for Jekyll. It contains multiple content types for a typical brochure/marketing website. The theme is fully responsive, blazing fast and artfully illustrated.
+  <!-- markdownlint-disable-next-line -->
+  # Chirpy Jekyll Theme
 
-[Live Demo](https://jekyll-serif.netlify.app/) |
-[Zerostatic Themes](https://www.zerostatic.io)
+  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
 
-<a href="https://www.buymeacoffee.com/zerostatic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+  [![CI](https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github)][ci]&nbsp;
+  [![Codacy Badge](https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy)][codacy]&nbsp;
+  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod)][license]&nbsp;
+  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange)][gem]&nbsp;
+  [![Open in Dev Containers](https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers)][open-container]
 
-![Jekyll Serif Theme screenshot](https://www.zerostatic.io/theme/jekyll-serif/jekyll-serif-screenshot.png)
+  [**Live Demo** →][demo]
 
-### Theme features
+  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
 
-- Jekyll 4.2+
-- Netlify & Github Pages ready
-- Services (Collection)
-- Team (Collection)
-- Features (Data)
-- SCSS
-- 100% Responsive design, animated hamburger and mobile slide in menu
-- Bootstrap 4.6 - _Only the bootstrap grid and utilites are imported by default. If you want to use more of the Boostrap library you can uncomment the `@import` in `style.scss`_
-- 100/100 Google Lighthouse speed score
-- 100/100 Google Lighthouse seo score
-- 100/100 Google Lighthouse accessibility score
-- 100/100 Google Lighthouse best practices score
-- Under 50KB without images or 80KB with images and illustrations ⚡
-- Under 20KB without Google fonts ⚡⚡⚡
-- Robust example content included
-- Royalty free illustrations included
+</div>
 
-## Installation
+## Features
 
-### Installing Ruby & Jekyll
+- Dark Theme
+- Localized UI language
+- Pinned Posts on Home Page
+- Hierarchical Categories
+- Trending Tags
+- Table of Contents
+- Last Modified Date
+- Syntax Highlighting
+- Mathematical Expressions
+- Mermaid Diagrams & Flowcharts
+- Dark Mode Images
+- Embed Media
+- Comment Systems
+- Built-in Search
+- Atom Feeds
+- PWA
+- Web Analytics
+- SEO & Performance Optimization
 
-If this is your first time using Jekyll, please follow the [Jekyll docs](https://jekyllrb.com/docs/installation/) and make sure your local environment (including Ruby) is setup correctly.
+## Documentation
 
-### Installing Theme
+To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
 
-Download or clone the theme.
+## Contributing
 
-To run the theme locally, navigate to the theme directory and run:
+Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
+to learn, inspire, and create. Any contributions you make are greatly appreciated.
+For details, see the "[Contributing Guidelines][contribute-guide]".
 
-```
-bundle install
-```
+## Credits
 
-To start the Jekyll local development server.
+### Contributors
 
-```
-bundle exec jekyll serve
-```
+Thanks to [all the contributors][contributors] involved in the development of the project!
 
-To build the theme.
+[![all-contributors](https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16)][contributors]
+<sub> — Made with [contrib.rocks](https://contrib.rocks)</sub>
 
-```
-bundle exec jekyll build
-```
+### Third-Party Assets
 
-## Deployment
+This project is built on the [Jekyll][jekyllrb] ecosystem and some [great libraries][lib], and is developed using [VS Code][vscode] as well as tools provided by [JetBrains][jetbrains] under a non-commercial open-source software license.
 
-### Netlify
+The avatar and favicon for the project's website are from [ClipartMAX][clipartmax].
 
-Use Netlify to deploy this theme. This theme contains a valid and tested `netlify.toml` - Feel free to use the 1-click deploy below.
+## License
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerostaticthemes/jekyll-serif-theme)
+This project is published under [MIT License][license].
 
-### Github Pages
-
-This theme has been tested to work with Github Pages (and Github Project Pages). When using Github Pages you will need to update the `baseurl` in the `_config.yml` otherwise all the css, images and paths will be broken.
-
-For example the site https://zerostaticthemes.github.io/jekyll-serif-theme would have `baseurl: "/jekyll-serif-theme/"`
-
-## Extras
-
-### License
-
-- You cannot create ports of this theme
-- You cannot re-sell this theme
-
-### Credits
-
-- Beautiful royalty free Illustrations by Icons8 - https://icons8.com/illustrations/style--pixeltrue
-- Stock images by Unsplash - https://unsplash.com/
-- Feature icons by Noun Project - https://thenounproject.com/
-
-## Support My Work
-
-I've been building open source themes for all the main static site generators for over 4 years now. My premium themes allow me to continue to allocate time to maintain, improve and build new open source themes.
-
-1. Leave a star ⭐🙏🏻
-2. Make a contribution to this theme, add a feature, fix a bug, nothing is to small 
-2. Mention this theme on twitter [@zerostaticio](https://twitter.com/zerostaticio) 📢
-3. Purchase a premium theme 🔥
-
-### All Jekyll Themes by Zerostatic
-
-- [Jekyll Serif (Open Source)](https://www.zerostatic.io/theme/jekyll-serif/)
-- [Jekyll Atlantic (Open Source)](https://www.zerostatic.io/theme/jekyll-atlantic/)
-- [Jekyll Advance (Premium)](https://www.zerostatic.io/theme/jekyll-advance/)
-- [Jekyll Origin (Premium)](https://www.zerostatic.io/theme/jekyll-origin/)
-- [Jekyll Curate (Premium)](https://www.zerostatic.io/theme/jekyll-curate/)
-
-🇦🇺 **Made in Australia** by Robert Austin
+[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
+[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
+[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
+[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
+[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
+[jekyllrb]: https://jekyllrb.com/
+[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
+[demo]: https://cotes2020.github.io/chirpy-demo/
+[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
+[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
+[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
+[lib]: https://github.com/cotes2020/chirpy-static-assets
+[vscode]: https://code.visualstudio.com/
+[jetbrains]: https://www.jetbrains.com/?from=jekyll-theme-chirpy

@@ -1,40 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: compress
+---
 
-<head>
-  <meta charset="utf-8">
-  <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">
-  <!-- Google Fonts CDN -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Self host font -->
-  <!-- <link rel="preload" href="{{ '/assets/fonts/playfair-display.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin> -->
-  <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
-  
-  {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
-  {% if page.meta_title %}<meta property="og:title" content="{{ page.meta_title }}"/>{% else %}<meta property="og:title" content="{{ page.title }}"/>{% endif %}
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="{{ url }}"/>
-  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>{% endif %}
-  {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
-  <meta name="twitter:card" content="summary"/>
-  {% if site.data.seo.meta_twitter_site %}<meta name="twitter:site" content="{{ site.seo.meta_twitter_site }}"/>{% endif %}
-  {% if site.data.seo.meta_twitter_creator %}<meta name="twitter:creator" content="{{ site.seo.meta_twitter_creator }}"/>{% endif %}
+<!doctype html>
 
-</head>
+{% include origin-type.html %}
 
-<body class='page {{layout.bodyClass}}'>
-  {% include main-menu-mobile.html %}
-  <div id="wrapper" class="wrapper">
-    {% include header.html headerClass='header-extra' %}
-    {{content}}
-  </div>
-  {% include footer.html %}
-  {% include sub-footer.html %}
-  <script type="text/javascript" src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-  {% include google-analytics.html %}
-</body>
+{% include lang.html %}
+
+{% if site.theme_mode %}
+  {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% endif %}
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
+  {% include head.html %}
+
+  <body>
+    {% include sidebar.html lang=lang %}
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        {% include topbar.html lang=lang %}
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            {% if layout.refactor or layout.layout == 'default' %}
+              {% include refactor-content.html content=content lang=lang %}
+            {% else %}
+              {{ content }}
+            {% endif %}
+          </main>
+
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+            <div class="access">
+              {% include_cached update-list.html lang=lang %}
+              {% include_cached trending-tags.html lang=lang %}
+            </div>
+
+            {% for _include in layout.panel_includes %}
+              {% assign _include_path = _include | append: '.html' %}
+              {% include {{ _include_path }} lang=lang %}
+            {% endfor %}
+          </aside>
+        </div>
+
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            {% for _include in layout.tail_includes %}
+              {% assign _include_path = _include | append: '.html' %}
+              {% include {{ _include_path }} lang=lang %}
+            {% endfor %}
+
+            {% include_cached footer.html lang=lang %}
+          </div>
+        </div>
+
+        {% include_cached search-results.html lang=lang %}
+      </div>
+
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
+    </div>
+
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+
+    <!-- Embedded scripts -->
+
+    {% for _include in layout.script_includes %}
+      {% assign _include_path = _include | append: '.html' %}
+      {% include {{ _include_path }} %}
+    {% endfor %}
+
+    {% include_cached search-loader.html lang=lang %}
+  </body>
 </html>
